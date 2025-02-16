@@ -1,6 +1,10 @@
 <h1>Add product: </h1>
 
 <%= form_with model: @product, local: true do |form| %>
+  <% @product.errors.full_messages.each do |error|%>
+    <%= error %>
+  <% end %>
+
   <div>
     <%= form.label :title %>
     <%= form.text_field :title%>
